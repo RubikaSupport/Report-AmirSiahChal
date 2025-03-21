@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="En">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixer By AMIR SIAH CHAL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        img {
+            width: 250px; 
+            height: 250px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <img src="https://raw.githubusercontent.com/RubikaSupport/Report-AmirSiahChal/refs/heads/main/Untitledffffffffffffffffffffff.png" alt="آیکون">
+</head>
+<body>
+
+<div class="container">
+    <input type="text" id="Guid" placeholder="Enter target Guid">
+    <input type="text" id="xxxlink" placeholder="Enter Not-Filtered XXX Link">
+    <input type="text" id="maliciouslink" placeholder="Enter malicious link">
+    <input type="text" id="onionlink" placeholder="Enter onion link (Real Dark Web site)">
+    <input type="text" id="ID" placeholder="Enter Target Username or supports(supportbot,rubika,etc...)">
+<br>
+<button onclick="generateLink()"> Mix it </button> 
+<br>
+<p id="result" style="color:darkred;"></p>
+<br>
+    <button id="copyButton"> Copy it </button>
+    <p id="message" style="color: green;"></p>
+</div>
+
+<script>
+    function getRandomLink() {
+        const links = ['youjizz.com','4tube.com','8teenxxx.com','alotporn.com','beeg.com','bustnow.com','cliphunter.com','definebabes.com','deviantclip.com','drtuber.com','empflix.com','fantasti.cc','fapdu.com','freeporn.com','freudbox.com','fuq.com','fux.com','grayvee.com','hellxx.com','hustlertube.com','jugy.com','jizzhut.com','kaktuz.com','keezmovies.com','kinxxx.com','laraporn.com','leakedporn.com','lovelyclips.com','lubetube.com','mofosex.com','monstertube.com','madthumbs.com','perfectgirls.net','pichunter.com','planetsuzy.com','porn.com','porn-plus.com','porncor.com','pornhub.com','pornrabbit.com','porntitan.com','pussy.org','redtube.com','tube8.com','xhamster.com','xnxx.com','xvideos.com','youjizz.com','javfinder.la','thefamilysextube.com','Pornhd.com','Melonstube.com','Spicybigbutt.com','m.hqporner.com','pornicisrbija.com','balkanjizz.com','balkancum.com','m.porn555.com','goldpornfilms.comsl','domacedevojke.com','pinkporno.xxx','besplatniporno.com','pornici.rs','domacipornici.org','pornici.eu','alohatube.com'];
+        const randomIndex = Math.floor(Math.random() * links.length);
+        return links[randomIndex];
+    }
+    function getRandomFbug() {
+        const Fbugs = ['\u4f5b\u5c71', '\u96c6\u56e2', '\u5728\u7ebf', '\ud55c\uad6d', '\u09ad\u09be\u09b0\u09a4', '\u516b\u5366', '\u0645\u0648\u0642\u0639', '\u516c\u76ca', '\u516c\u53f8', '\u79fb\u52a8', '\u6211\u7231\u4f60', '\u043c\u043e\u0441\u043a\u0432\u0430', '\u049b\u0430\u0437', '\u043e\u043d\u043b\u0430\u0439\u043d', '\u0441\u0430\u0439\u0442', '\u0441\u0440\u0431', '\u6de1\u9a6c\u9521', '\u043e\u0440\u0433', '\uc0bc\uc131', '\u0b9a\u0bbf\u0b99\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0bc2\u0bb0\u0bcd', '\u5546\u6807', '\u5546\u5e97', '\u5546\u57ce', '\u0434\u0435\u0442\u0438', '\u043c\u043a\u0434', '\u4e2d\u6587\u7f51', '\u4e2d\u4fe1', '\u4e2d\u56fd', '\u4e2d\u570b', '\u8c37\u6b4c', '\u0c2d\u0c3e\u0c30\u0c24\u0c4d', '\u0dbd\u0d82\u0d9a\u0dcf', '\u0aad\u0abe\u0ab0\u0aa4', '\u092d\u093e\u0930\u0924', '\u7f51\u5e97', '\u0938\u0902\u0917\u0920\u0928', '\u7f51\u7edc', '\u0443\u043a\u0440', '\u9999\u6e2f', '\u53f0\u6e7e', '\u53f0\u7063', '\u624b\u673a', '\u043c\u043e\u043d', '\u0627\u0644\u062c\u0632\u0627\u0626\u0631', '\u0639\u0645\u0627\u0646', '\u0627\u06cc\u0631\u0627\u0646', '\u0627\u0645\u0627\u0631\u0627\u062a', '\u0628\u0627\u0632\u0627\u0631', '\u0627\u0644\u0627\u0631\u062f\u0646', '\u0628\u06be\u0627\u0631\u062a', '\u0627\u0644\u0645\u063a\u0631\u0628', '\u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629', '\u0645\u0644\u064a\u0633\u064a\u0627', '\u0634\u0628\u0643\u0629', '\u10d2\u10d4', '\u673a\u6784', '\u7ec4\u7ec7\u673a\u6784', '\u0e44\u0e17\u0e22', '\u0633\u0648\u0631\u064a\u0629', '\u0440\u0443\u0441', '\u0440\u0444', '\u062a\u0648\u0646\u0633', '\u307f\u3093\u306a', '\u30b0\u30fc\u30b0\u30eb', '\u4e16\u754c', '\u0a2d\u0a3e\u0a30\u0a24', '\u7f51\u5740', '\u4f01\u4e1a', '\u0645\u0635\u0631', '\u0642\u0637\u0631', '\u5e7f\u4e1c', '\u0b87\u0bb2\u0b99\u0bcd\u0b95\u0bc8', '\u0b87\u0ba8\u0bcd\u0ba4\u0bbf\u0baf\u0bbe', '\u65b0\u52a0\u5761', '\u0641\u0644\u0633\u0637\u064a\u0646', '\u653f\u52a1'];
+        const randomIndex = Math.floor(Math.random() * Fbugs.length);
+        return Fbugs[randomIndex];
+    }
+    function getRandomEnglish() {
+        const Englishs = ["spam distribution","pornographic content","fake profiles creation","copyright infringement","violence promotion","child exploitation","anti-religious propaganda","political dissent","hate speech","nudity sharing","misleading information","identity theft","cyberbullying","harassment","extremist content","terrorism glorification","drug trafficking","human trafficking","profanity usage","scam activities","fraudulent schemes","inciting violence","threatening behavior","illegal substance sales","obscenity","defamation","plagiarism","disinformation campaigns","racism","sexually explicit material","grooming minors","cyberstalking","insulting religious figures","illegal gambling","coercion","blackmail","militancy promotion","disrespecting national symbols","propagating false ideologies","inciting riots","unlawful assembly","organized crime coordination","misrepresentation","malware distribution","phishing attacks","identity fraud","unauthorized data access","violating privacy rights","exploitation of vulnerable individuals","false reporting","excessive spamming","slandering individuals","misuse of personal data","unethical advertising","illegal content sharing","promoting intolerance","mocking cultural practices","defaming public figures","unauthorized content distribution","spreading conspiracy theories","engaging in mob mentality","promoting anti-government sentiment","violating intellectual property","targeting minors","cyber harassment","fomenting discord","promoting illegal activities","supporting extremist groups","denying historical events","manipulating public opinion","exploiting crises","spreading fear","encouraging self-harm","fostering addiction","sharing confidential information","violating terms of service","using bots for manipulation","spreading hate","intimidation tactics","coordinating illegal acts","engaging in social engineering","promoting dangerous ideologies","encouraging violence against groups","spreading misinformation","creating divisive content","exploiting tragedies","violating community guidelines","disrupting social harmony","manipulating emotions","creating panic","instigating conflict","harboring criminal intent","deceptive practices","promoting unethical behavior","facilitating illegal transactions","violating user consent","encouraging discrimination","misleading advertising","glorifying violence","facilitating a crime","promoting harmful practices","engaging in unethical competition","manipulating financial markets","exploiting personal vulnerabilities","sowing division","perpetrating fraud","engaging in unlawful surveillance","promoting extremism","fostering hate groups","engaging in intimidation","violating safety protocols","perpetuating stereotypes","instigating hatred","advocating for violence","spreading radical ideology","engaging in collusion","encouraging illegal immigration","promoting anti-social behavior","creating false narratives","engaging in cyber warfare","promoting illegal protests","spreading divisive propaganda","falsifying identities","facilitating criminal networks","promoting psychological manipulation","engaging in unethical practices","disregarding privacy laws","spreading extremist views","facilitating cybercrime","violating human rights","promoting conspiracy theories","engaging in digital harassment","fostering a culture of fear","violating ethical standards","instigating social unrest","promoting sectarian violence","encouraging disobedience","sowing discord among communities","promoting radicalization","engaging in unlawful activities"];
+        const randomIndex = Math.floor(Math.random() * Englishs.length);
+        return Englishs[randomIndex];
+    }
+    function getRandomRussian() {
+        const Russians = ["Распространение спама в групповых чатах","Создание фейковых аккаунтов для мошенничества","Публикация порнографического контента","Распространение насилия в видеороликах","Поддержка экстремистских групп","Разжигание ненависти к определённым религиям","Распространение ложной информации о политических событиях","Угрозы физической расправы в мессенджерах","Использование детского контента для манипуляции","Нарушение авторских прав на музыку и видео","Распространение наркотиков через мессенджеры","Кибербуллинг и травля пользователей","Публикация материалов, оправдывающих насилие","Создание групп для организации протестов без разрешения","Распространение личной информации без согласия","Использование мессенджеров для вербовки","Распространение сектантских идей","Публикация ложных новостей о религиозных лидерах","Дискредитация политических оппонентов","Мошенничество с использованием поддельных документов","Распространение контента, унижающего достоинство","Поддержка терроризма и насилия","Создание аккаунтов для травли","Публикация фейковых новостей о здравоохранении","Распространение ненависти к этническим группам","Публикация материалов с насилием над животными","Использование мессенджеров для распространения слухов","Заведомо ложные обещания о финансовых вложениях","Распространение жестокого обращения с детьми","Ограничение свободы слова через угрозы","Создание фейковых новостей о выборах","Участие в травле на основе сексуальной ориентации","Распространение контента, пропагандирующего дискриминацию","Использование мессенджеров для киберпреступлений","Создание фейковых аккаунтов для шантажа","Публикация материалов, подстрекающих к насилию","Распространение неправдивой информации о религии","Дискриминация на основе пола в мессенджерах","Создание групп для обсуждения незаконной деятельности","Публикация материалов, унижающих достоинство женщин","Распространение слухов о знаменитостях","Создание аккаунтов для травли детей","Распространение ложной информации о климате","Использование мессенджеров для подделки документов","Публикация материалов, оправдывающих насилие над детьми","Распространение информации о способах совершения преступлений","Создание фейковых аккаунтов для получения личной информации","Публикация порнографического контента с участием несовершеннолетних","Распространение антиправительственных настроений","Создание групп для организации незаконных собраний","Публикация материалов, подстрекающих к ненависти","Распространение фальшивых новостей о социальных движениях","Создание аккаунтов для манипуляции общественным мнением","Публикация материалов, нарушающих авторские права","Использование мессенджеров для распространения насилия","Поддержка насилия в социальных сетях","Распространение дезинформации о вакцинации","Создание фейковых новостей о гражданских правах","Публикация материалов, пропагандирующих расизм","Распространение слухов о здоровье известных людей","Создание аккаунтов для кибербуллинга","Публикация материалов, унижающих достоинство меньшинств","Распространение фейковых аккаунтов для манипуляций","Создание групп, пропагандирующих насилие","Публикация ложной информации о безопасности","Распространение контента, подстрекающего к самосожжению","Использование мессенджеров для распространения ненависти","Создание аккаунтов для шантажа на основе личных данных","Распространение ложных слухов о преступлениях","Публикация материалов с подстрекательством к насилию","Создание групп для разжигания конфликтов","Распространение недостоверной информации о миграции","Публикация материалов, оправдывающих жестокость","Создание фейковых новостей о терроризме","Распространение дезинформации о социальном обеспечении","Использование мессенджеров для организации преступных групп","Создание аккаунтов для манипуляции выборами","Публикация ненавистнических материалов","Распространение слухов о финансовых махинациях","Создание групп для организации беспорядков","Публикация материалов, пропагандирующих насилие над женщинами","Распространение ложной информации о религиозных конфликтах","Создание аккаунтов для сбора личнойинформации","Публикация материалов, подстрекающих к насилию над меньшинствами","Распространение дезинформации о правительственных мерах","Использование мессенджеров для организации насилия","Создание фейковых новостей о пандемии","Распространение слухов о здоровье населения","Создание групп для травли общественных деятелей","Публикация материалов, оправдывающих жестокость к детям","Распространение ненависти к определённым сообществам","Создание аккаунтов для манипуляции общественным мнением","Публикация материалов, подстрекающих к насилию на расовой основе","Распространение ложной информации о социальной политике"];
+        const randomIndex = Math.floor(Math.random() * Russians.length);
+        return Russians[randomIndex];
+    }
+    function generateLink() {
+        const Guid = document.getElementById('Guid').value;
+        const xxxlink = document.getElementById('xxxlink').value;
+        const ID = document.getElementById('ID').value;
+        const maliciouslink = document.getElementById('maliciouslink').value;
+        const onionlink = document.getElementById('onionlink').value;
+        const randomLink = getRandomLink();
+        const randomFbug = getRandomFbug();
+        const randomenglish = getRandomEnglish();
+        const randomrussian = getRandomRussian();
+        const randomNumber1 = Math.floor(Math.random() * 100);
+        const randomNumber2 = Math.floor(Math.random() * 100);
+        const randomNumber3 = Math.floor(Math.random() * 100);
+        const randomNumber4 = Math.floor(Math.random() * 100);
+        const generatedLink = `{${randomrussian} + ${randomenglish} }-https://${Guid}=(${randomLink})/__${randomFbug}__/(${onionlink})/(*(.(${xxxlink}).)*)/(${randomNumber1}.${randomNumber2}.${randomNumber3}.${randomNumber4})+${maliciouslink}=@${ID}`;
+        document.getElementById('result').innerText = generatedLink;
+    function copyToClipboard() {
+            navigator.clipboard.writeText(generatedLink).then(() => {
+                document.getElementById('message').innerText = "Copied !";
+            }).catch(err => {
+                console.error('Unable to copy: ', err);
+            });
+        }
+        document.getElementById('copyButton').addEventListener('click', copyToClipboard);
+    }
+</script>
+
+</body>
+</html>
